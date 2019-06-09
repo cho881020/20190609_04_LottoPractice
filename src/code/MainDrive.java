@@ -13,6 +13,44 @@ public class MainDrive {
 		
 		int[] userInputLottoNum = new int[6];
 		
+		
+		int[] userAutoLottoNum = new int[6];
+		
+		// Math.random의 결과 : 1 <= Math.random()*45+1 < 46 (1~45) 소수를 랜덤으로 생성.
+//		Ex. 0.75124321564 => double
+		
+		for (int i=0 ; i < userAutoLottoNum.length ; i++) {
+			
+			while (true) {
+				
+				int randomNum = (int) (Math.random()*45+1);
+				
+				boolean isDuplOk = true;
+				
+				for (int num : userAutoLottoNum) {
+					
+					if (num == randomNum) {
+						isDuplOk = false;
+					}
+				}
+				
+				if (isDuplOk) {
+					userAutoLottoNum[i] = randomNum;
+					break;
+				}
+				
+				
+			}
+			
+		}
+		
+		
+		for (int auto : userAutoLottoNum) {
+			System.out.println(auto);
+		}
+		
+		
+		
 		Scanner scan = new Scanner(System.in);
 
 		for (int i=0 ; i < userInputLottoNum.length ; i++) {
