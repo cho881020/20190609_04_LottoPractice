@@ -50,6 +50,29 @@ public class MainDrive {
 		}
 		
 		
+		for (int i=0 ; i < userAutoLottoNum.length ; i++) {
+			
+			for (int j=0 ; j < userAutoLottoNum.length-1 ; j++) {
+				
+				if (userAutoLottoNum[j] > userAutoLottoNum[j+1]) {
+					
+					int temp = userAutoLottoNum[j];
+					userAutoLottoNum[j] = userAutoLottoNum[j+1];
+					userAutoLottoNum[j+1] = temp;
+					
+				}
+				
+			}
+			
+		}
+		
+		System.out.println("정리된 랜덤 숫자");
+		
+		for (int sorted : userAutoLottoNum) {
+			System.out.println(sorted);
+		}
+		
+		
 		
 		Scanner scan = new Scanner(System.in);
 
