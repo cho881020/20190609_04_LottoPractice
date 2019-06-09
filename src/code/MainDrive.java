@@ -9,6 +9,7 @@ public class MainDrive {
 		System.out.println("로또 프로그램 입니다.");
 		
 		int[] thisWeekLottoNum = {10, 34, 38, 40, 42, 43};
+		int thisWeekBonusNum = 32;
 		
 		int[] userInputLottoNum = new int[6];
 		
@@ -55,8 +56,6 @@ public class MainDrive {
 		}
 		
 		
-//		2등을 제외한 나머지 경우의 등수를 판정.
-		
 		int correntCount = 0;
 		
 		for(int i=0 ; i<userInputLottoNum.length ; i++) {
@@ -75,7 +74,23 @@ public class MainDrive {
 			System.out.println("1등 당첨!");
 		}
 		else if (correntCount == 5) {
-			System.out.println("3등 당첨!");
+			
+			boolean bonusNumCorrect = false;
+			
+			for (int i=0 ; i < userInputLottoNum.length ; i++) {
+				if (thisWeekBonusNum == userInputLottoNum[i]) {
+					bonusNumCorrect = true;
+				}
+			}
+			
+			if (bonusNumCorrect) {
+				System.out.println("2등 당첨!");				
+			}
+			else {
+				System.out.println("3등 당첨!");
+			}
+			
+			
 		}
 		else if (correntCount == 4) {
 			System.out.println("4등 당첨!");
